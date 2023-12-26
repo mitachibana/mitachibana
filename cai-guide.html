@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta name="keywords" content="mitachibana, character.ai, character ai, ai">
+	<meta name="description" content="Mitachibana's programming sandbox website! There is a blog, webpage and coding samples, and English Lessons! Stop on by and be sure to say hi!" />
+	<link href="styles/index-styles.css" rel="stylesheet"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>character.ai Guide</title>
+  </head>
+  <body>
+	<h2 class="title">character.ai Guide</h2>
+	<div class="navbar notranslate">
+		<a href="index.html">homepage</a>
+		<a href="#translate">translate-page</a>
+		<a href="#introduction">intro</a>
+		<a href="#getting-started">getting-started</a>
+		<a href="#dialogue-setup">dialogue-setup</a>
+		<a href="#model-settings">model-settings</a></li>
+		<a href="#giving-feedback">giving-feedback</a>
+		<a href="#last-notes">last-notes</a></li>
+	</div>
+	<main>
+		<div class="flexbox1">
+			<div class="flex-left">
+				<h2 class="content-title notranslate" id="introduction">#introduction</h2>
+				<div class="greeting">
+					<h2>What is character.ai?</h2>
+					<p>character.ai is a "neural language model chatbot service." That is a mouthfull! To keep things simple, character.ai is a chatbot that has been taught how to write messages like a human. It was developed by ex-Google programmers in 2022. character.ai was taught how to write by analzying countless messages written by people around the world. Unlike the famous ChatGPT, character.ai specializes in messaging. You can send messages to it just like you would message a friend on LINE or Discord. character.ai is able to understand the context of your message and use outside information to make life-like responses. Because of these features, character.ai has become very popular with its iOS and Android apps hitting over 1.7 million downloads in 2023 alone.</p>
+				</div>
+				<div class="greeting">
+					<h2>Why Use character.ai in the English classroom?</h2>
+					<p>One of the biggest challenges of learning English in a non-English-speaking country is the lack of opportunity to communicate with native English speakers. character.ai allows students to use English in the form of instant messaging at any time for free. character.ai is also one of the most advanced models out there. It really feels like you are talking to a real person. character.ai also supports other languages such as Japanese, Spanish, and French.</p>
+				</div>
+				<div class="greeting">
+					<h2>What Makes character.ai Special?</h2>
+					<p>The coolest part about character.ai is that you can train it to talk like your favorite celebrity, fictional character, or even yourself. Could you imagine talking to Harry Potter about your day at work or school? character.ai makes that possible! Today we will be learning how to do this.</p>
+				</div>
+				<h2 class="content-title notranslate" id="getting-started">#getting-started</h2>
+				<div class="greeting">
+					<h2>Quick Overview</h2>
+					<p>Our objective is to create a character.ai model that writes messages similar to a person or character of our choice. Here is a general flow of how this works:</p>
+					<ol>
+						<li>Choose a character and find their dialogue online.</li>
+						<li>Format the dialogue so that character.ai can study it easily.</li>
+						<li>Create a character.ai account.</li>
+						<li>Create a new model in character.ai.</li>
+						<li>Adjust the model settings and insert your chosen dialogue from step #1.</li>
+						<li>Test the model and give the model feedback.</li>
+					</ol>
+				</div>
+				<div class="greeting">
+					<h2>What You Will Need</h2>
+					<p>Luckily there are not many things that you need for this project and character.ai is quite capable. That said, we will need to make an account with Kaggle, an online database as well as character.ai. Although character.ai has a mobile app for iOS and Android, I highly suggest working with your model on a computer. The mobile app is convenient for talking to your model as well as rating its responses but it is not very good for inputting your training dialogue.</p>
+					<p>In addition, when working with dialogue for a model, it is best to use plain text. You want to avoid using word processors like Microsoft Word as it adds formatting to your text of which can complicate things. I highly recommend downloading Notepad++ for this reason. It is open source and free to use!</p>
+					<a href="https://notepad-plus-plus.org/downloads/" target="_blank">Download Notepad++</a>
+				</div>
+				<h2 class="content-title notranslate" id="dialogue-setup">#dialogue-setup</h2>
+				<div class="greeting">
+					<h2>Get Dialogue from Kaggle</h2>
+					<p>To get things started, we need to find dialogue of the character we want to chat with! Of course you could copy all the dialogue from a book or watch a movie and write it all down. But those methods take up a copius amount of time. Luckily, a lot of this dialogue is already available to us online via sites like Kaggle.</p>
+					<ol>
+						<li>Go to <a href="https://www.kaggle.com/" target="_blank">kaggle.com</a> and make an account </li>
+						<li>In the search, type in the character name and add "dialogue." For example: south park dialogue.</li>
+						<li>Select one of the datasets that come up and download it. Most datasets come in .csv format. These files can be opened with Microsoft Excel.</li>
+						<li>Open the .csv file and take a look.</li>
+					</ol>
+				</div>
+				<div class="greeting">
+					<h2>Formatting the Dialogue</h2>
+					<p>This is where a little bit of elbow work comes in. Dialogue is important but it is useless if character.ai cannot read it well. This is why we need to format the dialogue correctly. Datasets from Kaggle are written in all different ways, but the most common probably looks something like this:</p>
+					<pre class="notranslate">
+						Kaguya: Kaichou, why are you so mean?
+						Miyuki: Uh... Ar.. No, I didn't mean it that way!
+						Kaguya: Then, what did you mean?
+						Miyuki: Ar... How do I put it...
+					</pre>
+					<p>While this looks pretty good to human eyes, the chatbot model does not know who "Kaguya" nor "Miyuki" are. In reality, it does not matter who they are, but we need to make it clear who we want the chatbot model to mimic and allow it to differentiate between different characters. If we want the chatbot to mimic "Kaguya," this is what we need to do:</p>
+					<pre class="notranslate">
+						{{char}}: Kaichou, why are you so mean?
+						Miyuki: Uh... Ar.. No, I didn't mean it that way!
+						{{char}}: Then, what did you mean?
+						Miyuki: Ar... How do I put it...
+					</pre>
+					<ul>
+						<li>Here, the <code>{{char}}</code> label tells the chatbot model that this is who they are supposed to be. The rest of the characters in the dialogue do not matter.</li>
+						<li>There is also the <code>{{user}}</code> label. If we replace "Miyuki" with the user label, the chatbot model will assume that the person messaging the chatbot is Miyuki and will respond accordingly. In all honesty, you can likely just ignore this label unless you want to get into roleplay.</li>
+						<li>You should remove all quotation marks. The semicolon is required, however.</li>
+						<li>The more dialogue you can provide, the better. character.ai now supports up to 32,000 characters' worth of dialogue.</li>
+						<li>Be selective in terms of what dialogue you want the chatbot model to learn from. Use dialogue that expresses a clear discussion between characters. This will result in more authentic responses when you use the chatbot.</li>
+						<li>A list of examples is provided in the character.ai settings page.</li>
+					</ul>
+					<p>That is really it! I suggest getting your dialogue snippets into Notepad++ and using the "replace" tool to replace your chosen character with the <code>{{char}}</code> label.</p>
+				</div>
+				<h2 class="content-title notranslate" id="model-settings">#model-settings</h2>
+				<div class="greeting">
+					<h2>Setting Up Your Model</h2>
+					<p>Now that the boring work is complete, we can actually create the chatbot model! Let us get started:</p>
+					<ol>
+						<li>Go to <a href="https://beta.character.ai/" target="_blank">character.ai</a> and create an account.</li>
+						<li>After that, click on the <code>create</code> button on the left side then click <code>create a character.</code></li>
+						<li>Go ahead and fill out the basic information for your chatbot. For the purposes of this guide, you can leave the <code>image generation</code> option unchecked.</li>
+						<li>I highly suggest setting the <code>Visibility</code> to <code>Private</code>. Later on, when you are ready to share your chatbot, you can change this setting.</li>
+						<li>Once you finish, click on <code>edit details (advanced)</code> at the bottom of the page.</li>
+					</ol>
+					<p>At the bottom of the settings page, you will see a section with a big text box labeled <code>Definition</code>. This is where you will paste all your dialogue that you formatted earlier. Once everything is in there, hit <code>Save</code> and then open up your chatbot!</p>
+				</div>
+				<h2 class="content-title notranslate" id="giving-feedback">#giving-feedback</h2>
+				<div class="greeting">
+					<h2>Giving Your Chatbot Feedback</h2>
+					<p>Congrats! You can now start messaging your chatbot! That said, your work is not yet complete. Just because the chatbot model studied all the dialogue you just crammed down its throat does not mean that it perfectly knows how to talk like the character you chose. You need to refine the chatbot by giving it feedback! Thanks to character.ai's UI, this is very straight forward:</p>
+					<ol>
+						<li>When the chatbot responds to your message, an arrow will appear on the right side of the message with stars appearing at the bottom.</li>
+						<li>Clicking on the arrow will generate a new response. You can do this a couple of times. You can scroll back to a previously generated response with the arrow that will appear on the left side of the message.</li>
+						<li>If you click the stars, it will pull up a rating menu. You can rate the message from 1-4 stars. In addition, a feeback menu will pop up. You can then select one of the feedback options. I suggest clicking on <code>Tell us more</code> and choosing from that list.</li>
+						<li>In my experience, generating around 4 responses and rating each one gets the best results for training the chatbot.</li>
+					</ol>
+				</div>
+				<div class="greeting">
+					<h2>The Importance of Feedback</h2>
+					<p>Without feedback, your chatbot will be prone to strange responses or falling out of character. The process of using your chatbot and giving it ample feedback on responses allows the chatbot to learn, and thus become more like the character you want it to be. This process takes the longest and it is completely up to you how far and long you want to go with it.</p>
+					<p>One thing! I highly suggest downloading and using the iOS or Android character.ai app. That way, you could pretty much chat with your chatbot while laying in bed. Giving feedback becomes as easy as swiping left or right on messages and tapping feedback.</p>
+				</div>
+				<h2 class="content-title notranslate" id="last-notes">#last-notes</h2>
+				<div class="greeting">
+					<h2>The End!</h2>
+					<p>Congrats! You now know how to use character.ai to create a chatbot that mimics one of your favorite characters. I hope that this guide has given you decent understanding about how the basics work. AI and deep learning are very complex topics and I am no expert. If you have any questions or suggestions, please reach out to me by email or on Discord/Revolt!</p>
+					<p>If you are a language teacher, this is a great way to not only give students access to foreign language practice 24/7, projects like these can be very motivating. Students can spend time crafting a chatbot experience to their liking. Instead of scripted and dry model conversations from textbooks, they can talk to their favorite movie or anime characters in English!</p>
+					<p>Thanks to character.ai, anyone can get a hands on experience working with AI. In the past, we used pre-trained models such as DialoGPT which required much more manual training and knowledge of Python. Even then, the responses could get strange. character.ai is truly a masterpiece that continues to get better with time. If you have the extra funds, please consider their paid subscription to support the devs!</p>
+				</div>
+			</div>
+			<div class="flex-right">
+				<h2 class="content-title notranslate" id="translate">#translate-page</h2>
+					<div id="google_translate_element" class="revolt-container"></div>
+					<script type="text/javascript">
+						function googleTranslateElementInit() {
+							new google.translate.TranslateElement(
+								{pageLanguage: 'en'},
+								'google_translate_element'
+							);
+						}
+					</script>
+					<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
+					cb=googleTranslateElementInit">
+					</script>
+				<h2 class="content-title notranslate">#contact</h2>
+				<div class="revolt-container">
+					<div class="server-right">
+						<h4 class="notranslate">mishatachibana@gmail.com</h4>
+						<div class="join-box">
+							<p><a href="mailto:mishatachibana@gmail.com" target="_blank">Click to Email</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+  </body>
+</html>

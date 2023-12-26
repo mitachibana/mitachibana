@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>test-survey</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial scale=1.0"/>
+    <link href="styles/survey-styles.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <main>
+	  <div class="survey-header">
+        <h1 id="title">Funeral Survey</h1>
+        <p id="description">We are sorry for your loss but we thank you for your patronage. Please help us improve our services by kindly completing this short survey.</p>
+      </div>
+    </main>
+    <form id="survey-form">
+      <fieldset>
+        <label id="name-label" for="full-name">Enter Your Full Name: <input id="name" name="full-name" type="text" placeholder="Full Name" required/></label>
+        <label id="email-label" for="email">Enter Your Email: <input id="email" name="email" type="email" placeholder="Email" required/>
+        <label id="number-label" for="age">Enter your age: <input id="number" name="age" type="number" min="18" max="120" placeholder="Age" required/></label>
+      </fieldset>
+      <fieldset>
+        <label for="referrer">How did you hear about us? 
+          <select id="dropdown" name="referrer" class="inline">
+            <option value="">(Select one)</option>
+            <option value="1">Wangsheng Funeral Parlor Ad</option>
+            <option value="2">Liyue Times Newspaper</option>
+            <option value="3">Hu Tao herself</option>
+		  </select>
+        </label>
+	  </fieldset>
+	  <fieldset>
+		<p>Which best applies to you?</p>
+        <label for="cust-type"><input id="radio" type="radio" name="cust-type" value="1" class="inline"/>Family of the deceased </label>
+        <label for="cust-type"><input id="radio" type="radio" name="cust-type" value="2" class="inline" />Funeral guest </label>
+      </fieldset>
+      <fieldset>
+		<p>Please check all that apply</p>
+        <label for="feelings"><input id="checkbox" type="checkbox" name="feelings" value="1" class="inline" />I feel satisfied with the funeral</label>
+        <label for="feelings"><input id="checkbox" type="checkbox" name="feelings" value="2" class="inline" />I feel the price was reasonable</label> 
+        <label for="feelings"><input id="checkbox" type="checkbox" name="feelings" value="3" class="inline" />I believe that the deceased has been properly sent off</label>
+        <label for="feelings"><input id="checkbox" type="checkbox" name="feelings" value="4" class="inline" />I would recommend Wangsheng Funeral Parlor to others</label>
+      </fieldset>
+      <fieldset>
+        <label for="opinion">Please write any other opinions or suggestions here: 
+          <textarea id="textarea" type="textarea" name="opinion" placeholder="I wish the event space was more accomodating for those with disabilities."></textarea>
+        </label>
+      </fieldset> 
+      <input id="submit" type="submit" value="Submit" />  
+    </form> 
+  </body>
+</html>
