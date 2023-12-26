@@ -1,0 +1,6 @@
+-This is a website I have created to apply and demonstrate my HTML & CSS coding skills.
+-The site is fully responsive and should display properly on any device.
+-I own the domain mitachibana.com. The website is currently hosted on bluehost and you can access my site via: https://mitachibana.com/index.html
+-The site is also hosted on github and can be found on this repository page.
+-There is a translate function that I have coded into the website. It is accessible via the right side-bar.
+-Any comments and questions are welcomed at mishatachibana@gmail.com. You may also email me through the website.
