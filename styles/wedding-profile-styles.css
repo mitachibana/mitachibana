@@ -1,0 +1,43 @@
+body {
+	width: 100%;
+	height: 100vh;
+	margin: auto;
+	text-align: center;
+	font-family: tahoma;
+	color: #D64E70;
+	background-color: #F0D2C0;
+}
+
+h1 {
+	font-family: Brush Script MT;
+	font-size: 48px;
+}
+
+.mainbox {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.profile {
+	display: flex;
+	flex-direction: column;
+	width: 90vw;
+	background-color: #F0D2C0;
+	border-radius: 12px;
+	margin: 20px;
+	align-items: center;
+}
+
+.pfp {
+	border-radius: 50%;
+	width: 150px;
+	margin: 10px;
+}
+
+.question-container {
+	width: 95%;
+	margin: 10px;
+	background-color: #FFDDEB;
+	border-radius: 12px;
+}
