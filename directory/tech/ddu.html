@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial scale=1.0"/>
+	<link href="../../styles/index-styles.css" rel="stylesheet"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <title>DDU Guide</title>
+  </head>
+  <body>
+	<main>
+		<div class="title notranslate">
+			<h1>Mitachibana</h1>
+		</div>
+		<div class="navbar notranslate">
+			<a href="../../index.html">Home</a>
+			<a href="../../works.html">Works</a>
+			<a class="active" href="../../resources.html">Resources</a>
+			<a href="../../about.html">About</a>
+		</div>
+		<div class="flexbox1">
+			<div class="flex-left">
+				<h2 class="content-title notranslate">#gpu-install-guide</h2>
+				<div class="greeting">
+					<h2>Proper installation of a GPU</a></h2>
+					<p>By Mitachibana - 21 August 2023</p>
+					<h4>This guide will focus on the drivers and provide an overall flow for how this should all be done. If you do not know how to physically install a GPU into your motherboard, please consult your motherboard manual.</h4>
+					<h4>You may download a .txt version of this article <a href="tech-downloads/gpu-install-guide.txt" download>here.</a></h4>
+					<p>You need to download and extract Display Driver Uninstaller (DDU) . I recommend just leaving it on your desktop. DDU completely removes your current drivers. Why is this necessary? Nvidia and AMD uninstall wizards are not very clean and trustworthy. They tend to leave stuff behind which can interferre with your new drivers.</p>
+					<h4>Download DDU <a href="https://www.guru3d.com/files-details/display-driver-uninstaller-download.html" target="_blank">here</a></h4>
+					<p>Also, before beginning, download the appropriate drivers for your new gpu. Leave the installer on the desktop.  <span class="bold">DO NOT download the any auto-detect or driver installation tools.</span> We just want the driver itself as the internet will be disabled when we install the drivers.</p>
+					<ol>
+						<li>Download DDU to desktop, extract the contents of the zip file, and then double click the "DDU v18.x.x.x" file in the folder to extract the application. A new folder will appear with the same name. The application itself will be in that folder and will be titled "Display Driver Uninstaller." Verify that it is there and leave it for now.</li>
+						<li>Type msconfig in your windows search. You can also just type in msconfig into the Run window.</li>
+						<li>Go to the "boot" tab and turn on "safe boot."</li>
+						<li>Click "apply" and then "ok." You will be prompted to restart the computer. <span class="bold">DON'T RESTART THE COMPUTER.</span></li>
+						<li>Disable your internet:
+							<ul>
+								<li>If you are running on ethernet, disconnect.</li>
+								<li>If you are on WiFi via a usb device, remove the device.</li>
+								<li>If your wifi is built into the motherboard or are using a pcie internet adapter, disable it (Settings>Network & Internet>Advanced Network Settings)</li>
+							</ul>
+						</li>
+						<li>Now restart your computer.</li>
+						<li>You computer should have now booted to safe mode or safe boot.</li>
+						<li><span class="bold">BEFORE DOING ANYTHING ELSE:</span> Repeat step 2 but this time turn off "safe boot." Press "apply" and "Ok" and <span class="bold">DO NOT RESTART WHEN PROMPTED.</span> We do this because we want the next boot up to be a normal one.</li>
+						<li>From your desktop, navigate to and launch "Display Driver Uninstaller"</li>
+						<li>It may prompt you with an options menu, leave the settings as is.</li>
+						<li>On the right side, there should be a "Select device type" drag down menu. Select "GPU"</li>
+						<li>The program should have automatically selected the brand of your GPU.</li>
+						<li>On the left side, clock "Clean and shutdown" and let it run. After the cleaning is finished, your computer will shut down.</li>
+						<li>After your computer is fully shut down, remove the power cable from your power supply unit and turn off the power supply unit (flip the switch).</li>
+						<li>Push and hold your power on button on the computer case for 10 seconds.</li>
+						<li>Remove your old gpu and install your new gpu as normal.</li>
+						<li>Put the power cord back into your power supply unit, turn it back on, then power up your computer.</li>
+						<li>Login to windows as normal, your resolution will likely be messed up. This is normal as you no longer have a display driver.</li>
+						<li>Run and install the drivers for your new gpu (the one you should have downloaded before starting this process). It will likely have you restart the computer. Let it restart.</li>
+						<li>After the restart, try launching the nvidia/amd control panel by right clicking the desktop. If it launches just fine and shows the proper model of gpu that you installed, you are good!</li>
+						<li>Lastly, reactivate your internet.</li>
+						<li>Stress test your gpu. I highly recommend 3DMark Time Spy stress test (or at least doing the Time Spy Benchmark) to make sure the system is stable. 3DMark is not free but very worth it. If you want to go the free route, you can try Furmark (look it up and download) for a few minutes (only a few minutes is needed. It can really jack up the temps on your gpu so please dont be doing it for hours)</li>
+					</ol>
+					<p>This is the industry standard way of properly installing a new gpu. If you are simply updating drivers and not switching gpus, you can follow the exact same steps (minus switching the gpu and selecting "Clean and Restart" instead of "Clean and Shutdown" in step 13.)</p>
+					<p>Why do we disable or remove the internet device? We want to prevent Windows Update from automatically installing display drivers. Windows update will, on its own, without saying anything at all, automatically install display drivers on your computer soon after you uninstall your old drivers. So we cut off the internet to avoid this. Once we finish everything, we then restore internet connection.</p>
+				</div>
+			</div>
+			<div class="flex-right">
+				<h2 class="content-title notranslate">#translate-page</h2>
+					<div id="google_translate_element" class="revolt-container"></div>
+					<script type="text/javascript">
+						function googleTranslateElementInit() {
+							new google.translate.TranslateElement(
+								{pageLanguage: 'en'},
+								'google_translate_element'
+							);
+						}
+					</script>
+					<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
+					cb=googleTranslateElementInit">
+					</script>
+
+					<h2 class="content-title notranslate">#contact</h2>
+					<div class="revolt-container">
+						<div class="server-right">
+							<h4 class="notranslate">mishatachibana@gmail.com</h4>
+							<div class="join-box">
+								<p><a href="mailto:mishatachibana@gmail.com" target="_blank">Click to Email</a></p>
+							</div>
+						</div>
+					</div>
+					
+					<h2 class="content-title notranslate">#downloads</h2>
+					<div class="link-container">
+						<a href="https://www.3dmark.com/" target="_blank"><img class="link-img" src="tech-media/3dmark-logo.png"></img></a>
+					</div>
+			</div>
+		</div>
+	</main>
+  </body>
+</html>
